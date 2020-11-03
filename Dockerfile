@@ -1,0 +1,10 @@
+# Container image that runs your code
+FROM ubuntu:latest
+
+# Copies your code file from your action repository to the filesystem path `/` of the container
+COPY entrypoint.sh /entrypoint.sh
+
+apt update && apt install nano
+
+# Code file to execute when the docker container starts up (`entrypoint.sh`)
+CMD ['/bin/bash']
